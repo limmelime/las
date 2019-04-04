@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LAS - About</title>
+	<meta charset="utf-8">
+	<meta name="description" content="The about of the LAS website is where you can find all of the information about; the developers, the website, and all of it's content">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<style>
+			@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+			*{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			body{
+				overflow-x: hidden;
+				background-color: rgba(10, 10, 10,1);
+			}
+			nav{
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				min-height: 8vh;
+				background-color: #000000;
+				font-family: Sans-Serif;
+			}
+			.logo{
+				color: rgb(226,226,226);
+				text-transform: uppercase;
+				letter-spacing: 5px;
+				font-size: 30px;
+			}
+			.logo a{
+				text-decoration: none;
+				color: white;
+			}
+			.nav-links{
+				display: flex;
+				background-color: none;
+				justify-content: space-around;
+				width: 30%;
+			}
+			.nav-links li{
+				list-style: none;
+				text-transform: uppercase;
+			}
+			.nav-links a{
+				color: rgb(226,226,226);
+				text-decoration: none;
+				letter-spacing: 3px;
+				font-weight: bold;
+				font-size: 14px;
+			}
+			.nav-links li:hover{
+				font-size: 110%;
+				text-transform: uppercase;
+			}
+			.burger{
+				display: none;
+			}
+			.burger div{
+				width: 25px;
+				height: 3px;
+				background-color: rgb(226,226,226);
+				margin: 5px;
+				transition: all 0.3s ease;
+			}
+			@media screen and (max-width:1024px){
+				.nav-links{
+					width: 60%
+				}
+			}
+			@media screen and (max-width:768px){
+				body{
+					overflow-x: hidden;
+				}
+				.nav-links{
+					position: absolute;
+					right: 0px;
+					height: 92vh;
+					top: 8vh;
+					background-color: #000000;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					width: 50%;
+					transform: translateX(100%);
+					transition: transform 0.5s ease-in;
+				}
+				.nav-links li{
+					opacity: 0;
+				}
+				.burger{
+					display: block;
+				}
+				
+			}
+			.nav-active{
+					transform: translateX(0%);
+				}
+				
+			@keyframes navLinkFade{
+				from{
+					opacity: 0;
+					transform: translateX(50px);
+				}
+				to{
+					opacity: 1;
+					transform: translateX(0px);
+				}
+			}
+			.toggle .line1{
+				transform: rotate(-135deg) translate(-5px,6px);
+			}
+			.toggle .line2{
+				opacity: 0;
+			}
+			.toggle .line3{
+				transform: rotate(135deg) translate(-5px,-6px);
+			}
+			.clr{
+				clear: both;
+			}
+			.footer-wrapper{
+				background-color: #000000;
+				color: white;
+				position: absolute;
+				top: 180%;
+				left: 0%;
+				width: 100%;
+				height: 200px;
+				display: flex;
+				align-items: center;
+				text-align: center;
+				justify-content: space-around;
+			}
+			.footer-links{
+				width: 30%;
+				display: flex;
+				justify-content: space-around;
+			}
+			footer li{
+				display: flex;
+				list-style: none;
+			}
+			footer a{
+				font-family: Sans-Serif;
+				font-weight: bold;
+				font-size: 120%;
+				letter-spacing: 5px;
+				text-decoration: none;
+				color: white;
+			}
+			.other-links{
+				background-color: rgba(20,20,20,1);
+				background-color: #000000;
+				width: 20%;
+				height: 75%;
+			}
+			.footer-icons{
+				display: flex;
+				font-size: 250%;
+				font-family: Sans-Serif;
+				justify-content: space-around;
+				
+			}
+			#footer-icons{
+				margin: 10px;
+			}
+			main{
+				background-color: black;
+			}
+			header .header{
+				background: rgba(255, 230, 255, 1);
+				padding: 0;
+				margin: 0;
+				position: absolute;
+				top: 30%;
+				left: 15%;
+				width: 70%;
+				height: 130%;
+				border: 1px solid rgba(255, 230, 255, 1);
+				border-radius: 20px;
+			}
+			header .header h1{
+				text-align: center;
+				font-size: 60px;
+				font-weight: bold;
+				font-family: Sans-Serif;
+			}
+			header .header p{
+				background-color: rgba(255, 230, 255, 1);
+				font-family: Sans-Serif;
+				font-weight: 200;
+				max-width: 1000px;
+				position: absolute;
+				font-size: 140%;
+				left: 5%;
+			}
+			header .header a{
+				color: #000000;
+			}
+			header .header ul{
+				position: absolute;
+				left: 5%;
+			}
+			header .header li{
+				font-family: Arial Nova;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div class="logo">
+				<a href="index.html"><h4><i class="fas fa-globe"></i> L.A.S</h4></a>
+			</div>
+			<ul class="nav-links">
+				<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+				<li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+				<li><a href="products.html"><i class="fas fa-shopping-cart"></i> Products</a></li>
+				<li><a href="servers.html"><i class="fas fa-server"></i> Servers</a></li>
+			</ul>
+			<div class="burger">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+		</nav>
+		<script>
+			const navSlide = () => {
+				const burger = document.querySelector('.burger');
+				const nav = document.querySelector('.nav-links');
+				const navLinks = document.querySelectorAll('.nav-links li');
+				
+				burger.addEventListener('click',()=>{
+					nav.classList.toggle('nav-active');
+					navLinks.forEach((link, index) => {
+						if (link.style.animation) {
+							link.style.animation = '';
+						} else {
+							link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 1}s`;
+						}
+					})
+					burger.classList.toggle('toggle');
+				})
+				
+			}
+			navSlide()
+		</script>
+		<header>
+			<div class="header">
+				<br><br><h1>About L.A.S</h1>
+				<br><br><hr><br><br>
+				<p>L.A.S stands for Limmelime Automated Systems. The L.A.S was founded on march 2018, by Limmelime wich is a software developer.
+				 This website was made by Limmelime just like all of the other products and content on this site. 
+				 Limmelime Automated Systems produces all kinds of software. We develope security systems to both our selfs and our users. 
+				 We also develope tools and add features to our existing tools every day. The tools we develope is making it even easier for us to develope even more. 
+				 I guess you can say that we work in an efficient way to make our work even more efficient the next day. It's a great technic and our workers are grateful for it. 
+				 At the moment, we have software engineers, designers, web developers, security specialists, and much more, to make our work fast, efficient and fun.
+				 At L.A.S we let our workers work with their own specialists, and if wanted, they can even try out other tasks beside their normal work.
+				 By the month of december 2018, we had two workers learning a different developing process than they were used to. In this way, we spred the efficiency to all of our workers.
+				 We have a data center full of servers for you to use. You can read more about our dedicated servers and our data center in the <a href="servers.html">servers page</a>. 
+				</p>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr><br><br>
+				<h1>Contact Information</h1>
+				<br><br><hr><br><br>
+				<p>There are some different ways to make contact with L.A.S. If you want to contact us via mail
+				</p>
+				<br><br>
+				<ul>
+					<li><a href="mailto:limmelime.contact@gmail.com?subject=L.A.S Contact">limmelime.contact@gmail.com</a></li>
+					<li><a href="mailto:limmelim3@gmail.com?subject=L.A.S Contact">limmelim3@gmail.com</a></li>
+				</ul>
+				<br><br><br>
+				<p>You can also contact us via sms or call to our support service
+				</p>
+				<br><br>
+				<ul>
+					<li>0727 34 62 45</li>
+					<li>0457 45 04 99</li>
+				</ul>
+			</div>
+		</header>
+		<main>
+		
+		</main>
+		<footer>
+			<div class="footer-wrapper">
+				<div class="other-links">
+					<p class="footer-icons">
+						<a href="https://www.youtube.com/channel/UCoyyoY1c4KWtbkyysFyiDHg" target="_blank">
+							<i class="fab fa-youtube" id="footer-icons"></i>
+						</a>
+						<a href="#" target="_blank">
+							<i class="fab fa-twitter" id="footer-icons"></i>
+						</a>
+					</p>
+					<br>
+					<p class="footer-icons">
+						<a href="https://www.twitch.tv/limmelime" target="_blank">
+							<i class="fab fa-twitch" id="footer-icons"></i>
+						</a>
+						<a href="https://instagram.com/limmelime" target="_blank">
+							<i class="fab fa-instagram"></i>
+						</a>
+					</p>
+				</div>
+				<ul class="footer-links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="products.html">Products</a></li>
+					<li><a href="servers.html">Servers</a></li>
+				</ul>
+			</div>
+		</footer>
+	</body>
+</html>
